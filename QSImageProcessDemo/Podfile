@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+
+target 'QSImageProcessDemo' do
+
+    pod 'QSDispatchQueue', '~>1.0.0'
+    pod 'SDWebImage', '~>4.1.0'
+    #内存泄漏检测
+    pod 'MLeaksFinder'
+
+end
