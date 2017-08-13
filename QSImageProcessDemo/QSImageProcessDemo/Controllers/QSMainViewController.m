@@ -28,7 +28,7 @@
     
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
     
-    self.title = @"QSUseImageDemo";
+    self.title = @"QSImageProcessDemo";
     self.dataSource = [NSMutableArray arrayWithObjects:@"本地图片处理",@"网络图片的处理",nil];
     [self.view addSubview:self.tableView];
 }
