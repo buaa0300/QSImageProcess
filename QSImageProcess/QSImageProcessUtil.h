@@ -10,6 +10,9 @@
 
 @class QSImageProcessConfig;
 
+// 图片处理0 - 默认
+void QSImageProcessDefault(CGContextRef context, UIImage *image, QSImageProcessConfig *config);
+
 /**
  图片处理1 - 裁剪圆角
 

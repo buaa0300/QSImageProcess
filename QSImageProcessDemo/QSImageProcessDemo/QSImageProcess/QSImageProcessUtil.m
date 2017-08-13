@@ -10,6 +10,13 @@
 #import "QSImageProcessConfig.h"
 #import "UIColor+QSImageProcess.h"
 
+// 图片处理0 - 默认
+void QSImageProcessDefault(CGContextRef context, UIImage *image, QSImageProcessConfig *config){
+    CGRect rect = CGContextGetClipBoundingBox(context);
+    [image drawInRect:rect];
+}
+
+
 // 图片处理1 - 裁剪圆角
 void QSImageProcessClipCorner(CGContextRef context, UIImage *image, QSImageProcessConfig *config){
     

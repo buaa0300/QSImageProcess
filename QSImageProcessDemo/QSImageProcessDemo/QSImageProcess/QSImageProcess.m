@@ -15,7 +15,7 @@ static dispatch_queue_t qs_process_image_create_queue() {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         qs_process_image_queue =
-        dispatch_queue_create("com.jzp.com.process.image.queue", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_create("com.jzp.com.process.image.queue", DISPATCH_QUEUE_CONCURRENT);
     });
     return qs_process_image_queue;
 }
@@ -57,6 +57,9 @@ static dispatch_queue_t qs_process_image_create_queue() {
               config:(QSImageProcessConfig *)config
            completed:(QSImageProcessCompletedBlock)completedBlock{
     
+    NSAssert(image != nil, @"image can't be nil");
+    NSAssert(config != nil, @"config can't be nil");
+    
     //图片处理queue
     [_dispatchQueue async:^{
         
@@ -73,6 +76,9 @@ static dispatch_queue_t qs_process_image_create_queue() {
 - (UIImage *)processImage:(UIImage *)image
                    config:(QSImageProcessConfig *)config{
     
+    NSAssert(image != nil, @"image can't be nil");
+    NSAssert(config != nil, @"config can't be nil");
+    
     if (CGSizeEqualToSize(config.outputSize, image.size)
         && [UIScreen mainScreen].scale == image.scale
         && config.cornerRadius == 0) {
@@ -86,7 +92,7 @@ static dispatch_queue_t qs_process_image_create_queue() {
     
     switch (config.option) {
         case QSImageProcessOptionDefault:{
-            [image drawInRect:rect];
+            QSImageProcessDefault(context, image, config);
         }
             break;
             

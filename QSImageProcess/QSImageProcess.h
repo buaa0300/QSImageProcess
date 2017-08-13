@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "QSImageProcessConfig.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^QSImageProcessCompletedBlock)(UIImage *outputImage);
 
@@ -50,3 +51,5 @@ typedef void(^QSImageProcessCompletedBlock)(UIImage *outputImage);
 
 
 @end
+
+NS_ASSUME_NONNULL_END
