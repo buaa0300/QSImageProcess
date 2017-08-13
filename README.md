@@ -16,11 +16,11 @@ A high-performance and convenient tool for processing local image or web image
 <h2>Usage-Demo1</h2>
 	
 
-    //load network image，default config,you don't need setup
+    //load web image，default config,you don't need setup
     [self.imageView qs_setImageWithURL:url
                     placeholderImage:placeholderImage];
 
-    //load network image，you should make a custom config
+    //load web image，you should make a custom config
     QSImageProcessConfig *config = [QSImageProcessConfig configWithOutputSize:self.imageView.frame.size cornerRadius:cornerRadius corners:UIRectCornerAllCorners];
     [self.imageView qs_setImageWithURL:url
                       placeholderImage:placeholderImage
