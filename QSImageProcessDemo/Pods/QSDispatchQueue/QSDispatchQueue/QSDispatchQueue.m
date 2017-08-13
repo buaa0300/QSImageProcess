@@ -98,7 +98,7 @@ static const NSUInteger kMaxConcurrentCount = 32;    //最大并发数
     self = [super init];
     if (self) {
         if (!queue) {
-            queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            _queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         }else{
             _queue = queue;
         }
